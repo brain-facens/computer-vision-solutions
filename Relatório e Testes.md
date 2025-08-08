@@ -43,7 +43,7 @@ O modelo foi, em sua maioria, capaz de identificar e segmentar veículos de form
 Houve confusão entre categorias como **carros**, **vans**, **jipes**, **ônibus** e **caminhões**, como ilustrado na imagem abaixo (figura 1):
 
 **Figura 1 – Confusão entre carro e caminhão**  
-![[Pasted image 20250807183104.png]]
+![Figura 1 – Confusão entre carro e caminhão](imagens_relatorio/Pasted%20image%20250807183104.png)
 
 ---
 
@@ -56,7 +56,7 @@ Houve confusão entre categorias como **carros**, **vans**, **jipes**, **ônibus
 - O melhor resultado foi quando um veículo foi iluminado pelo farol de outro carro, permitindo sua detecção (figura 2):
 
 **Figura 2 – Carro detectado durante o período noturno**  
-![[Pasted image 20250807184937.png]]
+![Figura 2 – Carro detectado durante o período noturno](imagens_relatorio/Pasted%20image%20250807184937.png)
 
 #### Iluminação e Angulação
 
@@ -64,25 +64,25 @@ Houve confusão entre categorias como **carros**, **vans**, **jipes**, **ônibus
 - Ajustes na **angulação das câmeras** e no **nível de zoom** são recomendados para melhorar os resultados, principalmente para contabilizar as rodas de cada veículo.
 
 **Figura 3 – Ônibus não detectado corretamente**  
-![[Pasted image 20250807185907.png]]  
-![[Pasted image 20250807185932.png]]
+![Figura 3 – Ônibus não detectado corretamente 1](imagens_relatorio/Pasted%20image%20250807185907.png)  
+![Figura 3 – Ônibus não detectado corretamente 2](imagens_relatorio/Pasted%20image%20250807185932.png)
 
 **Figura 4 – Detecção de caminhão (Câmera 1)**  
-![[Pasted image 20250807190303.png]]
+![Figura 4 – Detecção de caminhão (Câmera 1)](imagens_relatorio/Pasted%20image%20250807190303.png)
 
 **Figura 5 – Detecção incompleta de caminhão**  
-![[Pasted image 20250807185033.png]]  
-![[Pasted image 20250807185038.png]]  
-![[Pasted image 20250807185059.png]]
+![Figura 5 – Detecção incompleta de caminhão 1](imagens_relatorio/Pasted%20image%20250807185033.png)  
+![Figura 5 – Detecção incompleta de caminhão 2](imagens_relatorio/Pasted%20image%20250807185038.png)  
+![Figura 5 – Detecção incompleta de caminhão 3](imagens_relatorio/Pasted%20image%20250807185059.png)
 
 **Figura 6 – Desempenho da Câmera 3 (zoom médio)**  
-![[Pasted image 20250807183227.png]]
+![Figura 6 – Desempenho da Câmera 3 (zoom médio)](imagens_relatorio/Pasted%20image%20250807183227.png)
 
 **Figura 7 – Caminhão não sendo detectado**  
-![[Pasted image 20250807184143.png]]
+![Figura 7 – Caminhão não sendo detectado](imagens_relatorio/Pasted%20image%20250807184143.png)
 
 **Figura 8 – Ônibus identificado como carro**  
-![[Pasted image 20250807183410.png]]
+![Figura 8 – Ônibus identificado como carro](imagens_relatorio/Pasted%20image%20250807183410.png)
 
 ---
 
