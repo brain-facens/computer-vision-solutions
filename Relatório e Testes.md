@@ -99,6 +99,26 @@ Houve confusão entre categorias como **carros**, **vans**, **jipes**, **ônibus
 
 ---
 
+## Parte 2: Testes com modelos de identificação de rodas
+
+Na segunda etapa do estudo e desenvolvimento inicial do projeto, foi realizada a implementação de um modelo pré-treinado voltado para a detecção e identificação de rodas, com foco inicial em veículos de porte leve, como automóveis e motocicletas. Durante a fase experimental, observou-se que o modelo também foi capaz de detectar rodas em veículos pesados, como caminhões e ônibus, conforme ilustrado nas imagens a seguir:
+
+![roda onibus](./imagens_relatorio/image_12.png)
+
+Entretanto, o modelo apresentou limitações, especialmente na detecção simultânea de múltiplas rodas em uma mesma imagem, resultando em falhas de contagem, como exemplificado abaixo:
+
+![roda onibus contagem](./imagens_relatorio/image_2.png)
+
+O cenário ideal, encontrado em bases públicas de referência, apresenta detecções mais robustas e precisas, conforme demonstrado nas imagens:
+
+<img width="1333" height="744" alt="image1" src="https://github.com/user-attachments/assets/3d2c97d9-2459-4f5c-8da0-0cd6bea73541" />
+<img width="1333" height="744" alt="image" src="https://github.com/user-attachments/assets/f129864c-5608-46a2-a9e3-76c78a4fc77e" />
+
+
+Além disso, foi realizada uma análise do consumo computacional durante a aplicação do modelo. Para um vídeo de 3 minutos, o tempo total de processamento foi aproximadamente equivalente à duração do vídeo, com um uso médio de memória da GPU em torno de 245 MB, conforme evidenciado na figura a seguir:
+
+![consumo da GPU](./imagens_relatorio/image15.png)
+
 ## Referências de Datasets
 
 🔗 [Car and Truck Detection Dataset (Roboflow)](https://universe.roboflow.com/stage-dt/car-and-truck-detection/dataset/3/images?split=train)  
