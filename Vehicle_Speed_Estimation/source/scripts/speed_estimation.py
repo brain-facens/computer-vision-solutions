@@ -4,6 +4,8 @@ from ultralytics import YOLO, solutions
 model = YOLO("yolo11n-seg.pt")
 names = model.model.names
 
+#Testes
+
 cap = cv2.VideoCapture("/home/rafael-brain/GitHub/Trabalho/computer-vision-solutions/Vehicle_Speed_Estimation/examples/Diurno/videoDiaPam07082025.mp4")
 
 w, h, fps = (int(cap.get(x)) for x in (cv2.CAP_PROP_FRAME_WIDTH, cv2.CAP_PROP_FRAME_HEIGHT, cv2.CAP_PROP_FPS))
