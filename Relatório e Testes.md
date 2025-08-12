@@ -107,17 +107,19 @@ Na segunda etapa do estudo e desenvolvimento inicial do projeto, foi realizada a
 
 Entretanto, o modelo apresentou limitações, especialmente na detecção simultânea de múltiplas rodas em uma mesma imagem, resultando em falhas de contagem, como exemplificado abaixo:
 
-![roda onibus contagem](./imagens_relatorio/image_2.png)
+![roda onibus contagem](./imagens_relatorio/image_13.png)
+
 
 O cenário ideal, encontrado em bases públicas de referência, apresenta detecções mais robustas e precisas, conforme demonstrado nas imagens:
 
-<img width="1333" height="744" alt="image1" src="https://github.com/user-attachments/assets/3d2c97d9-2459-4f5c-8da0-0cd6bea73541" />
-<img width="1333" height="744" alt="image" src="https://github.com/user-attachments/assets/f129864c-5608-46a2-a9e3-76c78a4fc77e" />
+![alt text](./imagens_relatorio/image_14.png)
+![alt text](./imagens_relatorio/image_15.png)
 
 
 Além disso, foi realizada uma análise do consumo computacional durante a aplicação do modelo. Para um vídeo de 3 minutos, o tempo total de processamento foi aproximadamente equivalente à duração do vídeo, com um uso médio de memória da GPU em torno de 245 MB, conforme evidenciado na figura a seguir:
 
-![consumo da GPU](./imagens_relatorio/image15.png)
+![consumo da GPU](./imagens_relatorio/image_16.png)
+
 
 ## Referências de Datasets
 
