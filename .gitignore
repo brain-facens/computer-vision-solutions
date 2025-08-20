@@ -164,3 +164,7 @@ cython_debug/
 *.avi
 *.mp4
 *.mkv
+*.webm
+*.zip
+
+/Vehicle_Speed_Estimation/dataset
