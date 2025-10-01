@@ -1,0 +1,12 @@
+ultralytics
+opencv-python
+albumentations
+onnx
+onnxruntime
+ultralytics
+torch
+torchvision
+torchaudio
+tensorflow
+yt-dlp 
+pafy
