@@ -12,7 +12,13 @@ def inference(source_path: str, model: str, show: bool, save: bool, conf: float,
             success, frame = cap.read()
 
             if success:
-                results = detector(frame)
+                results = detector.predict(
+                    source = frame,
+                    save = save,
+                    conf = conf,
+                    classes = classes
+                )
+
                 annotated_frame = results[0].plot()
 
                 cv.imshow("PPE Detector", annotated_frame)
@@ -49,10 +55,10 @@ if __name__ == "__main__":
     ]
 
     inference(
-        source_path = "/home/nata-brain/Documents/ws/computer-vision-solutions/solutions/ppe_detector/data/videos/8853463-hd_1920_1080_24fps.mp4",
+        source_path = images,
         model = "/home/nata-brain/Documents/ws/computer-vision-solutions/solutions/ppe_detector/src/models/src/weights/ppe_detector_v0.pt",
         show = False,
         save = True,
-        conf = 0.2, 
+        conf = 0.1, 
         classes = [3]
     )
