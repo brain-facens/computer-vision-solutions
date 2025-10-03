@@ -1,5 +1,5 @@
 import cv2
-
+import datetime
 from ultralytics import solutions
 
 def count_specific_classes(video_path, output_video_path, model_path, classes_to_count):
@@ -20,7 +20,9 @@ def count_specific_classes(video_path, output_video_path, model_path, classes_to
         fps, 
         (w, h)
     )
-    line_points = [(900, 1000), (1200, 300)]
+
+    # (x, y)
+    line_points = [(10, 450), (1270, 450)]
 
     counter = solutions.ObjectCounter(
         show = True, 
@@ -38,9 +40,19 @@ def count_specific_classes(video_path, output_video_path, model_path, classes_to
             break
 
         results = counter(im0)
-        
-        # cv2.imshow("PPE Detector", results.plot_im)
-        
+        if results.classwise_count:
+            current_datetime = datetime.datetime.now()
+            if results.classwise_count['car']:
+                print(f"Contagem de Carros: {results.classwise_count['car']} {current_datetime}")
+            elif results.classwise_count['motorcycle']:
+                print(f"Contagem de Motos: {results.classwise_count['motorcycle']} {current_datetime}")
+            elif results.classwise_count['bus']:
+                print(f"Contagem de Onibus: {results.classwise_count['bus']} {current_datetime}")
+            elif results.classwise_count['truck']:
+                print(f"Contagem de Caminhões: {results.classwise_count['truck']} {current_datetime}")
+            elif results.classwise_count['truck']:
+                print(f"Contagem de Bicicletas: {results.classwise_count['bicycle']} {current_datetime}")
+                
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
@@ -51,8 +63,8 @@ def count_specific_classes(video_path, output_video_path, model_path, classes_to
 
 if __name__ == "__main__":
     count_specific_classes(
-        video_path = "/home/nata-brain/Documents/ws/computer-vision-solutions/solutions/ppe_detector/data/videos/cctv_store.mp4",
+        video_path = "rtsp://admin:Smart2022@172.16.231.120:50000/video",
         output_video_path = "/home/nata-brain/Documents/ws/computer-vision-solutions/solutions/ppe_detector/runs/detect/video_survillance",
         model_path = 'yolo11l.pt',
-        classes_to_count = [0]
+        classes_to_count = [1, 2, 3, 5, 7]
     )
