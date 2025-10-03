@@ -9,8 +9,8 @@ def count_specific_classes(video_path, output_video_path, model_path, classes_to
     assert cap.isOpened(), "Error reading video file"
 
     w, h, fps = (int(cap.get(x)) for x in (
-        cv2.CAP_PROP_FRAME_WIDTH, 
-        cv2.CAP_PROP_FRAME_HEIGHT, 
+        cv2.CAP_PROP_FRAME_WIDTH,
+        cv2.CAP_PROP_FRAME_HEIGHT,
         cv2.CAP_PROP_FPS)
     )
 
@@ -22,7 +22,7 @@ def count_specific_classes(video_path, output_video_path, model_path, classes_to
     )
 
     # (x, y)
-    line_points = [(10, 450), (1270, 450)]
+    line_points = [(10, 350), (1270, 650)]
 
     counter = solutions.ObjectCounter(
         show = True, 
@@ -52,6 +52,8 @@ def count_specific_classes(video_path, output_video_path, model_path, classes_to
                 print(f"Contagem de Caminhões: {results.classwise_count['truck']} {current_datetime}")
             elif results.classwise_count['truck']:
                 print(f"Contagem de Bicicletas: {results.classwise_count['bicycle']} {current_datetime}")
+            elif results.classwise_count['person']:
+                print(f"Contagem de Pessoas: {results.classwise_count['person']} {current_datetime}")
                 
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
@@ -66,5 +68,5 @@ if __name__ == "__main__":
         video_path = "rtsp://admin:Smart2022@172.16.231.120:50000/video",
         output_video_path = "/home/nata-brain/Documents/ws/computer-vision-solutions/solutions/ppe_detector/runs/detect/video_survillance",
         model_path = 'yolo11l.pt',
-        classes_to_count = [1, 2, 3, 5, 7]
+        classes_to_count = [0, 1, 2, 3, 5, 7]
     )
