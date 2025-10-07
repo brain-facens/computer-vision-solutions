@@ -22,11 +22,11 @@ def count_specific_classes(video_path, output_video_path, model_path, classes_to
     )
 
     # (x, y)
-    line_points = [(10, 350), (1270, 650)]
+    line_points_vehicle = [(10, 300), (1270, 300)]
 
     counter = solutions.ObjectCounter(
         show = True, 
-        region = line_points, 
+        region = line_points_vehicle, 
         model = model_path, 
         classes = classes_to_count, 
         tracker = 'bytetrack.yaml'
@@ -40,26 +40,24 @@ def count_specific_classes(video_path, output_video_path, model_path, classes_to
             break
 
         results = counter(im0)
-        if results.classwise_count:
-            current_datetime = datetime.datetime.now()
-            if results.classwise_count['car']:
-                print(f"Contagem de Carros: {results.classwise_count['car']} {current_datetime}")
-            elif results.classwise_count['motorcycle']:
-                print(f"Contagem de Motos: {results.classwise_count['motorcycle']} {current_datetime}")
-            elif results.classwise_count['bus']:
-                print(f"Contagem de Onibus: {results.classwise_count['bus']} {current_datetime}")
-            elif results.classwise_count['truck']:
-                print(f"Contagem de Caminhões: {results.classwise_count['truck']} {current_datetime}")
-            elif results.classwise_count['truck']:
-                print(f"Contagem de Bicicletas: {results.classwise_count['bicycle']} {current_datetime}")
-            elif results.classwise_count['person']:
-                print(f"Contagem de Pessoas: {results.classwise_count['person']} {current_datetime}")
+        # if results.classwise_count:
+        #     current_datetime = datetime.datetime.now()
+        #     if results.classwise_count['car']:
+        #         print(f"Contagem de Carros: {results.classwise_count['car']} {current_datetime}")
+        #     elif results.classwise_count['motorcycle']:
+        #         print(f"Contagem de Motos: {results.classwise_count['motorcycle']} {current_datetime}")
+        #     elif results.classwise_count['bus']:
+        #         print(f"Contagem de Onibus: {results.classwise_count['bus']} {current_datetime}")
+        #     elif results.classwise_count['truck']:
+        #         print(f"Contagem de Caminhões: {results.classwise_count['truck']} {current_datetime}")
+        #     elif results.classwise_count['truck']:
+        #         print(f"Contagem de Bicicletas: {results.classwise_count['bicycle']} {current_datetime}")
+            
                 
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
     cap.release()
-    # video_writer.release()
     cv2.destroyAllWindows()
 
 
